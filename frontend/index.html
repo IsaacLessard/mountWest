@@ -20,7 +20,32 @@
   <body ng-app="eventApp">
     <div ng-controller="eventCont">
       <button> New Event</button>
-      <form></form>
+      <form ng-hide="" ng-submit="newEvent()" name="newEvent">
+        <input name="name" type="text" ng-model="newEvent.name">
+        <select name="type">
+          <option>Concert</option>
+          <option>Wedding</option>
+          <option></option>
+          <option></option>
+          <option></option>
+        </select>
+        <select name="company">
+          <option>Rando</option>
+          <option>EventPlanner</option>
+          <option>Company 3</option>
+          <option>Company 4</option>
+          <option>Company 5</option>
+        </select>
+        <input name="date" type="date" ng-model="newEvent.date">
+        <input type="submit">
+      </form>
+      <h3> Search: </h3><input type='text' ng-model="searchText">
+      <div ng-repeat="event in events | filter:searchText">
+        <h3>Name: {{event.name}}</h3>
+        <h3>Type: {{event.type}}</h3>
+        <h3>Company: {{event.company}}</h3>
+        <h3>Date: {{event.date}}</h3>
+      </div>
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
