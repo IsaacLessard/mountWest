@@ -6,14 +6,16 @@ var app = express();
 
 //
 router.get('/', function (req, res, next) {
-  knex.from('event').innerJoin('client','event.client_id', 'clientiid')
+// returnObject ={}
+  knex.from('event').innerJoin('client','event.client_id', 'client.id').innerJoin('employee', 'event.employee_id', 'employee.id').innerJoin('feedback', 'event.feedback_id', 'feedback.id')
+  .then(function(events){
+    res.json(events)
+  })
 })
 
 
-module.exports= router;
-
-router.get('/:id', function (req, res, next) {
-  Events().select().where('id', req.params.id).then()
-})
+// router.get('/:id', function (req, res, next) {
+//   Events().select().where('id', req.params.id).then()
+// })
 
 module.exports = router;
