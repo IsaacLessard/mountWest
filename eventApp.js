@@ -26,22 +26,22 @@ app.controller('eventsCont', function($scope, $http) {
 });
 
 app.controller('eventCont', function ($scope, $http) {
-  
-})
 
-eventApp.config(['$routeProvider',
-  function($routeProvider) {
-    $routeProvider.
-      when('/events', {
-        templateUrl: '../frontend/events.html',
-        controller: 'eventsCont'
-      }).
-      when('/events/:id', {
-        templateUrl: '../frontend/event.html',
-        controller: 'eventCont'
-      })
-      .otherwise({
-        redirectTo: '../frontend/events.html'
-      })
-  }
-  ])
+})
+//
+// eventApp.config(['$routeProvider',
+//   function($routeProvider) {
+//     $routeProvider.
+//       when('/events', {
+//         templateUrl: '../frontend/events.html',
+//         controller: 'eventsCont'
+//       }).
+//       when('/events/:id', {
+//         templateUrl: '../frontend/event.html',
+//         controller: 'eventCont'
+//       })
+//       .otherwise({
+//         redirectTo: '../frontend/events.html'
+//       })
+//   }
+//   ])
