@@ -3,6 +3,12 @@ var router = express.Router();
 var knex = require('../db/knex');
 var app = express();
 
+function Events() {
+  return knex('events')
+}
+
 app.get('/', function (req, res, next) {
-  res.json('events')
+  Events().select().then(function(events) {
+    res.json(events)
+  })
 })

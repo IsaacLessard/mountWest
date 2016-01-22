@@ -14,7 +14,7 @@ app.controller('eventsCont', function($scope, $http) {
 
   $scope.createEvent = function () {
     $http.post('/events', $scope.formData)
-    .success(funciton(data) {
+    .success(function(data) {
       $scope.formData = {};
       $scope.events = data;
       console.log(data);
