@@ -16,18 +16,86 @@
     <div >
     <div ng-controller="formCont">
       <h2>Please fill out the contact details and then click 'Take Survey'. </h2>
-      <form ng-submit="clientData()" name="addressForm">
-        <input name="name" type="text" ng-model="contact.name">
-        <input name="email" type="text" ng-model="contact.email">
-        <input name="phone" type="text" ng-model="contact.phone">
-        <input name="phone" type="text" ng-model="contact.phone">
-
-        <input type="submit" value="Take Survey">
-      </form>
       <form ng-hide="" ng-submit="formResponse()" name="addressForm">
-        <input name="name" type="text" ng-model="contact.name">
-        <input name="email" type="text" ng-model="contact.email">
-        <input name="phone" type="text" ng-model="contact.phone">
+        <label for="rating">Rate your overall satisfaction with the pre event communications and responsiveness</label>
+        <select name="rating" ng-model="contact.rating">
+          <option value="1">
+            1
+          </option>
+          <option value="2">
+          2
+          </option>
+          <option value="3">
+          3
+          </option>
+          <option value="4">
+          4
+          </option>
+          <option value="5">
+          5
+          </option>
+        </select>
+        <label for="arrive_early">Did the event crew arrive on time or early?</label>
+        <input type="radio" name="arrive_early" id="arrive_early" value="yes"> Yes
+        <input type="radio" name="arrive_early" id="arrive_early" value="no">No
+        <label for="set_up">Was equipment setup and functioning in the expected time frame?</label>
+        <input type="radio" name="set_up" id="set_up" value="yes"> Yes
+        <input type="radio" name="set_up" id="set_up" value="no">No
+        <label for="confidence">How confident were you in the crew's ability to accomodate the needs of the event</label>
+        <select name="confidence" ng-model="contact.confidence">
+          <option value="1">
+            1
+          </option>
+          <option value="2">
+          2
+          </option>
+          <option value="3">
+          3
+          </option>
+          <option value="4">
+          4
+          </option>
+          <option value="5">
+          5
+          </option>
+        </select>
+        <label for="satisfaction">How satisfied were you with the overall aesthetic of the setup?</label>
+        <select name="satisfaction" ng-model="contact.satisfaction">
+          <option value="1">
+            1
+          </option>
+          <option value="2">
+          2
+          </option>
+          <option value="3">
+          3
+          </option>
+          <option value="4">
+          4
+          </option>
+          <option value="5">
+          5
+          </option>
+        </select>
+        <label for="value">Overall, how would you rae the value of the services you received?</label>
+        <select name="value" ng-model="contact.value">
+          <option value="1">
+            1
+          </option>
+          <option value="2">
+          2
+          </option>
+          <option value="3">
+          3
+          </option>
+          <option value="4">
+          4
+          </option>
+          <option value="5">
+          5
+          </option>
+        </select>
+
         <input type="submit">
       </form>
       <h3> Search: </h3><input type='text' ng-model="searchText">
